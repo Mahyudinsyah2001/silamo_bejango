@@ -42,14 +42,6 @@
                             <p class="text-sm text-blue-800 font-semibold mb-2">File Saat Ini:</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-gray-700 break-all font-medium"><i class="fa-solid fa-file mr-2 text-blue-500"></i> {{ $informasi->original_name }}</span>
-                                <div class="flex gap-2 ml-4">
-                                    <a href="{{ Storage::url($informasi->file_path) }}" target="_blank" class="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded font-bold shadow-sm">Lihat</a>
-                                    <form action="{{ route('admin.informasi-sidang.destroy', $informasi->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus file ini?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="text-xs bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded font-bold shadow-sm">Hapus</button>
-                                    </form>
-                                </div>
                             </div>
                             <p class="text-xs text-gray-500 mt-2">Diunggah pada: {{ $informasi->created_at->format('d M Y H:i') }}</p>
                         </div>
